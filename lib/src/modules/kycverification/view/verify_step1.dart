@@ -1,3 +1,4 @@
+import 'package:arabian_gold_diamonds/app/routes/app_pages.dart';
 import 'package:arabian_gold_diamonds/app/themedata/appcolor.dart';
 import 'package:arabian_gold_diamonds/app/themedata/text_style.dart';
 import 'package:arabian_gold_diamonds/app/utils/spaces.dart';
@@ -353,6 +354,13 @@ class VerifyStep1 extends StatelessWidget {
                     Get.to(() => VerifyStep2());
                   },
                 ),
+                defaultSpacerLarge,
+                Center(child: GestureDetector(
+                  onTap: (){
+                     Get.offAllNamed(Routes.homescreen);
+                  },
+                  child: Text("Save & Complete Later",style: photoverifictStyle,))),
+                defaultSpacer,
 
                 SizedBox(height: 20.h),
               ],

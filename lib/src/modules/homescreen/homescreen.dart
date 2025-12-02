@@ -30,30 +30,18 @@ class HomeScreeen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 /// LOGO
-                Image.asset(
-                  Assets.images.logo.keyName,
-                  height: 140.h,
-                ),
+                Image.asset(Assets.images.logo.keyName, height: 140.h),
 
                 SizedBox(height: 40.h),
 
                 /// BUTTONS SECTION
-                AppButton(
-                  title: "Start Saving",
-                  onPressed: () {},
-                ),
+                AppButton(title: "Start Saving", onPressed: () {}),
                 SizedBox(height: 18.h),
 
-                AppButton(
-                  title: "Gold Plans",
-                  onPressed: () {},
-                ),
+                AppButton(title: "Gold Plans", onPressed: () {}),
                 SizedBox(height: 18.h),
 
-                AppButton(
-                  title: "My Profile",
-                  onPressed: () {},
-                ),
+                AppButton(title: "My Profile", onPressed: () {}),
 
                 SizedBox(height: 40.h),
 
