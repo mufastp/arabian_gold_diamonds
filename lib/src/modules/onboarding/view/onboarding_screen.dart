@@ -51,6 +51,7 @@ class OnboardingView extends StatelessWidget {
                   ),
 
                   /// Skip Button
+                 if (index != 2)
                   Positioned(
                     top: 50,
                     right: 20,
@@ -82,35 +83,38 @@ class OnboardingView extends StatelessWidget {
                   /// Next Button
                   if (index != 2)
                     Positioned(
-                      right: 0,
+                      right: -80, // 👈 pushes half outside the screen
                       top: MediaQuery.of(context).size.height * 0.43,
-                      child: Container(
-                        height: 120.h,
-                        width: 90.w,
-
-                        // THIS IS THE CORRECT SHAPE
-                        decoration: BoxDecoration(
-                          color: const Color(
-                            0xFF1D1740,
-                          ), // dark navy like your design
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(80.r),
-                            bottomLeft: Radius.circular(80.r),
-                          ),
-                        ),
-
-                        child: Center(
+                      child: Transform.rotate(
+                        angle: 0.785, // 45-degree diamond
+                        child: GestureDetector(
+                          onTap: () => controller.nextPage(pageController),
                           child: Container(
-                            height: 48.h,
-                            width: 48.w,
+                            width: 150,
+                            height: 150,
                             decoration: BoxDecoration(
-                              color: AppColors.gold500,
-                              borderRadius: BorderRadius.circular(16.r),
+                              color:index == 0? const Color(0xFF1A1F3D):Color(0xFF671411),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.4),
+                                  blurRadius: 20,
+                                  offset: Offset(0, 8),
+                                ),
+                              ],
                             ),
-                            child: Icon(
-                              Icons.arrow_forward,
-                              color: Colors.white,
-                              size: 22.sp,
+                          
+                            child: Transform.rotate(
+                              angle: -0.785, // rotate icon back
+                              child: Container(
+                                alignment: Alignment.centerLeft,
+                                padding: const EdgeInsets.all(20),
+                                child: Icon(
+                                  Icons.chevron_right_rounded,
+                                  color: Color(0xFFD4A017),
+                                  size: 36,
+                                ),
+                              ),
                             ),
                           ),
                         ),

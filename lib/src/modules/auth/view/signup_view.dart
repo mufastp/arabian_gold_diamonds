@@ -41,7 +41,7 @@ class SignupView extends StatelessWidget {
               children: [
                 /// BACK BUTTON
                 Image.asset(Assets.images.logo.keyName),
-            
+
                 /// TITLE
                 Text(
                   "Sign up",
@@ -51,9 +51,9 @@ class SignupView extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-            
+
                 defaultSpacer24,
-            
+
                 /// SIGNUP FORM CARD
                 Container(
                   padding: EdgeInsets.all(16.w),
@@ -69,28 +69,30 @@ class SignupView extends StatelessWidget {
                         hint: "Enter Email",
                         controller: email,
                         validator: (v) {
-                          if (v == null || v.isEmpty) return "Email is required";
+                          if (v == null || v.isEmpty)
+                            return "Email is required";
                           if (!GetUtils.isEmail(v)) return "Enter valid email";
                           return null;
                         },
                       ),
-            
+
                       defaultSpacer,
-            
+
                       /// PASSWORD
                       AppTextField(
                         label: "Create Password",
                         hint: "Enter Password",
                         controller: password,
                         validator: (v) {
-                          if (v == null || v.isEmpty) return "Password required";
+                          if (v == null || v.isEmpty)
+                            return "Password required";
                           if (v.length < 3) return "Minimum 3 characters";
                           return null;
                         },
                       ),
-            
+
                       defaultSpacer,
-            
+
                       /// CONFIRM PASSWORD
                       AppTextField(
                         label: "Confirm Password",
@@ -98,19 +100,20 @@ class SignupView extends StatelessWidget {
                         controller: confirmPassword,
                         isPassword: true,
                         validator: (v) {
-                          if (v == null || v.isEmpty) return "Password required";
+                          if (v == null || v.isEmpty)
+                            return "Password required";
                           if (v.length < 3) return "Minimum 3 characters";
                           return null;
                         },
                       ),
-            
+
                       defaultSpacer,
-            
+
                       /// TOGGLE OFFERS
                     ],
                   ),
                 ),
-            
+
                 defaultSpacerLarge,
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,9 +129,9 @@ class SignupView extends StatelessWidget {
                         inactiveTrackColor: Colors.grey.shade400,
                       ),
                     ),
-            
+
                     SizedBox(width: 6.w),
-            
+
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -155,7 +158,7 @@ class SignupView extends StatelessWidget {
                   ],
                 ),
                 defaultSpacerSmall,
-            
+
                 /// CREATE ACCOUNT BUTTON
                 Obx(() {
                   return AppButton(
@@ -171,9 +174,9 @@ class SignupView extends StatelessWidget {
                     },
                   );
                 }),
-            
+
                 SizedBox(height: 20.h),
-            
+
                 /// FOOTER
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -196,7 +199,7 @@ class SignupView extends StatelessWidget {
                     ),
                   ],
                 ),
-            
+
                 SizedBox(height: 40.h),
               ],
             ),
